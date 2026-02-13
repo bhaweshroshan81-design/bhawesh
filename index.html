@@ -6,96 +6,88 @@
 <title>For My Love ❤️</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
 
-body {
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-    color: #333;
-}
+    body {
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        color: #333;
+    }
 
-.container {
-    width: 90%;
-    max-width: 500px;
-}
+    .container {
+        width: 90%;
+        max-width: 500px;
+    }
 
-/* HOME SECTION COLUMN LAYOUT */
-#home {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
+    .box {
+        background: white;
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: 0.3s ease;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        font-weight: bold;
+    }
 
-.box {
-    width: 100%;
-    max-width: 350px;
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    font-weight: bold;
-}
+    .box:hover {
+        transform: scale(1.05);
+        background: #ffe6eb;
+    }
 
-.box:hover {
-    transform: scale(1.05);
-    background: #ffe6eb;
-}
+    .hidden {
+        display: none;
+    }
 
-.hidden {
-    display: none;
-}
+    .btn {
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s;
+    }
 
-.btn {
-    padding: 10px 20px;
-    margin: 10px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: 0.3s;
-}
+    .yes {
+        background-color: #ff4d6d;
+        color: white;
+    }
 
-.yes {
-    background-color: #ff4d6d;
-    color: white;
-}
+    .yes:hover {
+        background-color: #e63950;
+    }
 
-.yes:hover {
-    background-color: #e63950;
-}
+    .no {
+        background-color: #aaa;
+        color: white;
+    }
 
-.no {
-    background-color: #aaa;
-    color: white;
-}
+    .no:hover {
+        background-color: #888;
+    }
 
-.no:hover {
-    background-color: #888;
-}
+    .paragraph {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
 
-.paragraph {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
+    h2 {
+        margin-bottom: 15px;
+        color: #ff4d6d;
+    }
 
-h2 {
-    margin-bottom: 15px;
-    color: #ff4d6d;
-}
 </style>
 </head>
 
@@ -103,7 +95,7 @@ h2 {
 
 <div class="container">
 
-    <!-- HOME -->
+    <!-- HOME SECTION -->
     <div id="home">
         <div class="box" onclick="showSection('p1')">💌 A Message For You</div>
         <div class="box" onclick="showSection('p2')">🌹 Something From My Heart</div>
@@ -147,8 +139,8 @@ h2 {
     <div id="proposal2" class="hidden paragraph">
         <h2>Please Think Again 🥺</h2>
         <p>
-            Are you sure? I promise to love you, respect you,
-            and stand beside you in every situation.
+            Are you sure? I promise to love you, respect you, and
+            stand beside you in every situation.  
             Will you marry me?
         </p>
         <button class="btn yes" onclick="showSection('yesPage')">Yes ❤️</button>
@@ -173,7 +165,7 @@ h2 {
         <p>
             This is the happiest moment of my life.
             I promise to love you endlessly, support your dreams,
-            and make every day feel special.
+            and make every day feel special.  
             Our forever starts now. ❤️
         </p>
         <br>
@@ -183,17 +175,17 @@ h2 {
 </div>
 
 <script>
-function showSection(id) {
-    const sections = document.querySelectorAll('.container > div');
-    sections.forEach(section => section.classList.add('hidden'));
-    document.getElementById(id).classList.remove('hidden');
-}
+    function showSection(id) {
+        const sections = document.querySelectorAll('.container > div');
+        sections.forEach(section => section.classList.add('hidden'));
+        document.getElementById(id).classList.remove('hidden');
+    }
 
-function goHome() {
-    const sections = document.querySelectorAll('.container > div');
-    sections.forEach(section => section.classList.add('hidden'));
-    document.getElementById('home').classList.remove('hidden');
-}
+    function goHome() {
+        const sections = document.querySelectorAll('.container > div');
+        sections.forEach(section => section.classList.add('hidden'));
+        document.getElementById('home').classList.remove('hidden');
+    }
 </script>
 
 </body>
