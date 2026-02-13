@@ -1,11 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love ❤️</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        color: #333;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 500px;
+    }
+
+    .box {
+        background: white;
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: 0.3s ease;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        font-weight: bold;
+    }
+
+    .box:hover {
+        transform: scale(1.05);
+        background: #ffe6eb;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    .yes {
+        background-color: #ff4d6d;
+        color: white;
+    }
+
+    .yes:hover {
+        background-color: #e63950;
+    }
+
+    .no {
+        background-color: #aaa;
+        color: white;
+    }
+
+    .no:hover {
+        background-color: #888;
+    }
+
+    .paragraph {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        margin-bottom: 15px;
+        color: #ff4d6d;
+    }
+
+</style>
 </head>
+
 <body>
-    
+
+<div class="container">
+
+    <!-- HOME SECTION -->
+    <div id="home">
+        <div class="box" onclick="showSection('p1')">💌 A Message For You</div>
+        <div class="box" onclick="showSection('p2')">🌹 Something From My Heart</div>
+        <div class="box" onclick="showSection('proposal1')">💍 One Important Question</div>
+    </div>
+
+    <!-- PARAGRAPH 1 -->
+    <div id="p1" class="hidden paragraph">
+        <h2>My Love ❤️</h2>
+        <p>
+            From the day you came into my life, everything became brighter.
+            Your smile is my peace, your voice is my comfort, and your love
+            is the most beautiful gift I have ever received. I promise to
+            always protect your heart and cherish you forever.
+        </p>
+        <br>
+        <button class="btn yes" onclick="goHome()">Back</button>
+    </div>
+
+    <!-- PARAGRAPH 2 -->
+    <div id="p2" class="hidden paragraph">
+        <h2>You Are My World 🌎</h2>
+        <p>
+            I may not be perfect, but my love for you is pure and endless.
+            Every moment with you feels magical. I want to grow with you,
+            laugh with you, and build a beautiful future together.
+        </p>
+        <br>
+        <button class="btn yes" onclick="goHome()">Back</button>
+    </div>
+
+    <!-- PROPOSAL STEP 1 -->
+    <div id="proposal1" class="hidden paragraph">
+        <h2>Will You Marry Me? 💍</h2>
+        <p>Will you marry me and live with me forever?</p>
+        <button class="btn yes" onclick="showSection('yesPage')">Yes ❤️</button>
+        <button class="btn no" onclick="showSection('proposal2')">No</button>
+    </div>
+
+    <!-- PROPOSAL STEP 2 -->
+    <div id="proposal2" class="hidden paragraph">
+        <h2>Please Think Again 🥺</h2>
+        <p>
+            Are you sure? I promise to love you, respect you, and
+            stand beside you in every situation.  
+            Will you marry me?
+        </p>
+        <button class="btn yes" onclick="showSection('yesPage')">Yes ❤️</button>
+        <button class="btn no" onclick="showSection('proposal3')">No</button>
+    </div>
+
+    <!-- PROPOSAL STEP 3 (ONLY YES OPTIONS) -->
+    <div id="proposal3" class="hidden paragraph">
+        <h2>Pretty Please 💖</h2>
+        <p>
+            I cannot imagine my life without you.
+            You are my forever, my always.
+            So tell me... will you marry me?
+        </p>
+        <button class="btn yes" onclick="showSection('yesPage')">Yes ❤️</button>
+        <button class="btn yes" onclick="showSection('yesPage')">Yes ❤️</button>
+    </div>
+
+    <!-- YES PAGE -->
+    <div id="yesPage" class="hidden paragraph">
+        <h2>She Said YES!!! 💍❤️</h2>
+        <p>
+            This is the happiest moment of my life.
+            I promise to love you endlessly, support your dreams,
+            and make every day feel special.  
+            Our forever starts now. ❤️
+        </p>
+        <br>
+        <button class="btn yes" onclick="goHome()">Home</button>
+    </div>
+
+</div>
+
+<script>
+    function showSection(id) {
+        const sections = document.querySelectorAll('.container > div');
+        sections.forEach(section => section.classList.add('hidden'));
+        document.getElementById(id).classList.remove('hidden');
+    }
+
+    function goHome() {
+        const sections = document.querySelectorAll('.container > div');
+        sections.forEach(section => section.classList.add('hidden'));
+        document.getElementById('home').classList.remove('hidden');
+    }
+</script>
+
 </body>
 </html>
